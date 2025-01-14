@@ -1,0 +1,27 @@
+services:
+    suricata:
+        image: jasonish/suricata:master
+        container_name: suricata
+        stdin_open: true
+        tty: true
+        network_mode: host
+        cap_add:
+            - net_admin
+            - net_raw
+            - sys_nice
+            - sys_time  # Adicionado para permitir a alteração da hora
+        volumes:
+            - ./logs:/var/log/suricata
+            - ./suricata.yaml:/etc/suricata/suricata.yaml
+            - ./rules:/var/lib/suricata/rules
+            - /etc/timezone:/etc/timezone:ro
+            - /etc/localtime:/etc/localtime:ro
+        command: suricata -i eth0
+    evebox:
+      image: jasonish/evebox:latest
+      container_name: evebox
+      ports:
+       - "5636:5636"
+      volumes:
+       - ./logs/eve.json:/var/log/evebox/eve.json:ro
+      command: evebox server -v --host 0.0.0.0 -D /etc/evebox/ --datastore sqlite --input /var/log/evebox/eve.json --no-auth --no-tls
