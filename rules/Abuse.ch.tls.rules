@@ -1,7 +1,7 @@
 ################################################################
 # abuse.ch Suricata IDS SSL Certificate Ruleset                #
 # For Suricata 4.1.0 or newer                                  #
-# Last updated: 2025-02-05 07:11:31 UTC                        #
+# Last updated: 2025-02-05 11:50:20 UTC                        #
 #                                                              #
 # Terms Of Use: https://sslbl.abuse.ch/blacklist/              #
 # For questions please contact sslbl [at] abuse.ch             #
@@ -6257,4 +6257,6 @@ alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certific
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (QuasarRAT C&C)"; tls_cert_fingerprint; content:"9a:e9:a5:6e:a5:64:29:b2:80:3a:b0:77:cb:5d:2a:e3:fd:ea:1b:d6"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/9ae9a56ea56429b2803ab077cb5d2ae3fdea1bd6/; sid:903206247; rev:1;)
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"67:12:6e:ef:7c:f5:e2:39:4f:0d:c5:18:ab:c5:99:dc:5b:3f:19:37"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/67126eef7cf5e2394f0dc518abc599dc5b3f1937/; sid:903206248; rev:1;)
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (Malware distribution)"; tls_cert_fingerprint; content:"31:fc:9a:27:4f:dc:35:41:0b:37:4b:5a:8d:cd:65:ef:e1:8b:e2:49"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/31fc9a274fdc35410b374b5a8dcd65efe18be249/; sid:903206249; rev:1;)
-# END (6250) entries
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"49:c7:19:26:9a:9b:ef:57:39:c6:07:2b:1e:9f:3b:b2:79:4d:3d:f8"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/49c719269a9bef5739c6072b1e9f3bb2794d3df8/; sid:903206250; rev:1;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (OffLoader C&C)"; tls_cert_fingerprint; content:"39:41:56:ab:81:54:33:34:f6:d6:86:09:63:22:96:70:96:21:f1:8c"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/394156ab81543334f6d68609632296709621f18c/; sid:903206251; rev:1;)
+# END (6252) entries
