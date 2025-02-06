@@ -1,7 +1,7 @@
 ################################################################
 # abuse.ch Suricata IDS SSL Certificate Ruleset                #
 # For Suricata 4.1.0 or newer                                  #
-# Last updated: 2025-02-05 11:50:20 UTC                        #
+# Last updated: 2025-02-06 06:54:21 UTC                        #
 #                                                              #
 # Terms Of Use: https://sslbl.abuse.ch/blacklist/              #
 # For questions please contact sslbl [at] abuse.ch             #
@@ -6259,4 +6259,6 @@ alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certific
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (Malware distribution)"; tls_cert_fingerprint; content:"31:fc:9a:27:4f:dc:35:41:0b:37:4b:5a:8d:cd:65:ef:e1:8b:e2:49"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/31fc9a274fdc35410b374b5a8dcd65efe18be249/; sid:903206249; rev:1;)
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"49:c7:19:26:9a:9b:ef:57:39:c6:07:2b:1e:9f:3b:b2:79:4d:3d:f8"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/49c719269a9bef5739c6072b1e9f3bb2794d3df8/; sid:903206250; rev:1;)
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (OffLoader C&C)"; tls_cert_fingerprint; content:"39:41:56:ab:81:54:33:34:f6:d6:86:09:63:22:96:70:96:21:f1:8c"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/394156ab81543334f6d68609632296709621f18c/; sid:903206251; rev:1;)
-# END (6252) entries
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (RustyStealer C&C)"; tls_cert_fingerprint; content:"2b:ea:72:cf:da:e6:3e:cb:ae:62:e7:b4:e8:20:67:9b:51:11:8e:9d"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/2bea72cfdae63ecbae62e7b4e820679b51118e9d/; sid:903206252; rev:1;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (Vidar C&C)"; tls_cert_fingerprint; content:"ab:04:e8:92:f8:03:ca:3e:e2:0f:65:91:57:78:79:06:c8:be:dd:a5"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/ab04e892f803ca3ee20f659157787906c8bedda5/; sid:903206253; rev:1;)
+# END (6254) entries
