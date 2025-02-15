@@ -1,7 +1,7 @@
 ################################################################
 # abuse.ch Suricata IDS SSL Certificate Ruleset                #
 # For Suricata 4.1.0 or newer                                  #
-# Last updated: 2025-02-14 06:12:11 UTC                        #
+# Last updated: 2025-02-14 19:22:35 UTC                        #
 #                                                              #
 # Terms Of Use: https://sslbl.abuse.ch/blacklist/              #
 # For questions please contact sslbl [at] abuse.ch             #
@@ -6340,4 +6340,9 @@ alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certific
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (Rhadamanthys C&C)"; tls_cert_fingerprint; content:"42:6c:3f:da:b0:82:1e:b3:06:92:35:cf:ad:8c:ff:48:41:20:d3:64"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/426c3fdab0821eb3069235cfad8cff484120d364/; sid:903206330; rev:1;)
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (AsyncRAT C&C)"; tls_cert_fingerprint; content:"71:f0:18:c2:5a:a8:19:be:2c:f2:7f:64:46:db:86:0c:8f:dc:5f:7d"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/71f018c25aa819be2cf27f6446db860c8fdc5f7d/; sid:903206331; rev:1;)
 alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"d3:0c:38:42:f3:77:0f:22:20:0c:ae:ba:8d:5a:3b:7a:cf:83:e8:46"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/d30c3842f3770f22200caeba8d5a3b7acf83e846/; sid:903206332; rev:1;)
-# END (6333) entries
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (Rhadamanthys C&C)"; tls_cert_fingerprint; content:"d7:e9:66:b3:44:3d:52:38:e8:16:16:0f:5d:8d:20:e3:50:42:5f:c6"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/d7e966b3443d5238e816160f5d8d20e350425fc6/; sid:903206333; rev:1;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"2c:d5:fc:60:8d:b1:57:ad:55:ba:2e:0d:f6:ad:06:6b:de:da:6c:66"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/2cd5fc608db157ad55ba2e0df6ad066bdeda6c66/; sid:903206334; rev:1;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (OffLoader C&C)"; tls_cert_fingerprint; content:"aa:b6:7c:d9:fc:9c:2f:d3:a2:b3:f0:2e:77:0c:2d:b0:5d:f6:5b:39"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/aab67cd9fc9c2fd3a2b3f02e770c2db05df65b39/; sid:903206335; rev:1;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"aa:59:1c:bd:07:0a:b6:a9:6d:70:c2:53:38:5f:40:71:ae:26:53:23"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/aa591cbd070ab6a96d70c253385f4071ae265323/; sid:903206336; rev:1;)
+alert tls $EXTERNAL_NET any -> $HOME_NET any (msg:"SSLBL: Malicious SSL certificate detected (LummaStealer C&C)"; tls_cert_fingerprint; content:"61:a1:fe:06:c6:ee:51:d4:ac:5d:28:bf:d2:73:36:32:29:d9:45:16"; reference:url, sslbl.abuse.ch/ssl-certificates/sha1/61a1fe06c6ee51d4ac5d28bfd273363229d94516/; sid:903206337; rev:1;)
+# END (6338) entries
