@@ -9,19 +9,21 @@ services:
             - net_admin
             - net_raw
             - sys_nice
-            - sys_time  # Adicionado para permitir a alteração da hora
+            - sys_time
         volumes:
-            - ./logs:/var/log/suricata
+            - ./logs:/var/log/suricata # change logs dir
             - ./suricata.yaml:/etc/suricata/suricata.yaml
             - ./rules:/var/lib/suricata/rules
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
-        command: suricata -i eth0
+        command: suricata -i enp3s0
+
     evebox:
       image: jasonish/evebox:latest
       container_name: evebox
       ports:
        - "5636:5636"
       volumes:
-       - ./logs/eve.json:/var/log/evebox/eve.json:ro
+       - ./logs/eve.json:/var/log/evebox/eve.json:ro # add logs dir
+       - ./evebox_config:/etc/evebox/ # add configs dir
       command: evebox server -v --host 0.0.0.0 -D /etc/evebox/ --datastore sqlite --input /var/log/evebox/eve.json --no-auth --no-tls
