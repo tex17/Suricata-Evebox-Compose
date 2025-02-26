@@ -16,7 +16,7 @@ services:
             - ./rules:/var/lib/suricata/rules
             - /etc/timezone:/etc/timezone:ro
             - /etc/localtime:/etc/localtime:ro
-        command: suricata -i enp3s0
+        command: suricata -i enp3s0 # <----- change to you interface
 
     evebox:
       image: jasonish/evebox:latest
